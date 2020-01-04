@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="container ">
+    <br>
+    <div class="mahdi">        
+   
+    {% for display in admins %}
+    <div class="row">
+        <div class="col-sm-8 my-4">
+            <h3 class="text-center text-info">{{ display.title }}</h3>
+            <br>
+           <p class="text-right pr-3" style="font-size: 1em;">{{display.body}}</p> 
+        </div>
+        <div class="col-sm-8 my-4 pl-3 mr-auto">
+            <img src="{{ display.pictured.url }}" style="width:600px;" alt="">
+        <hr>
+    </div>
+    {% endfor %}
+</div>
+
+    </div>
+
+{% endblock %}

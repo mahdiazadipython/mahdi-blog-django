@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+
+<div class="container">
+
+<h4  class="text-center my-3 " style="color:blue">لیست همه آموزش ها:</h4>
+
+<table class="table table-striped">
+    <thead>
+        <tr class="bg-light">
+            <td>عنوان</td>
+            <td>دانلود</td>
+        </tr>
+
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr class="bg-light">
+
+            <td>{{ book.title }}</td>
+            <td>
+                <a href="{{ book.pdf.url }}" class="btn btn-primary btn-sm">
+                دانلود رایگان
+                </a>
+            </td>           
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+
+</table>
+
+</div>
+</div>
+
+
+{% endblock %}
